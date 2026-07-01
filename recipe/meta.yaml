@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "pystac" %}
-{% set version = "1.14.3" %}
+{% set version = "1.15.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pystac-{{ version }}.tar.gz
-  sha256: 24f92d6f301371859aa0abc1bbe7b1523a603e1184a6d139ecb323967c2c9bb3
+  sha256: 0975f78ac648b89f180378089fdd358006c0dc5d974db57c6f8fa81c4162f5d5
 
 build:
   number: 0
@@ -21,6 +21,29 @@ requirements:
     - setuptools >=61.0
     - pip
   run:
+    - pystac-core >=1.15.0,<2
+    - pystac-ext-classification
+    - pystac-ext-datacube
+    - pystac-ext-eo
+    - pystac-ext-file
+    - pystac-ext-grid
+    - pystac-ext-item-assets
+    - pystac-ext-label
+    - pystac-ext-mgrs
+    - pystac-ext-mlm
+    - pystac-ext-pointcloud
+    - pystac-ext-projection
+    - pystac-ext-raster
+    - pystac-ext-render
+    - pystac-ext-sar
+    - pystac-ext-sat
+    - pystac-ext-scientific
+    - pystac-ext-storage
+    - pystac-ext-table
+    - pystac-ext-timestamps
+    - pystac-ext-version
+    - pystac-ext-view
+    - pystac-ext-xarray-assets
     - python >={{ python_min }}
     - python-dateutil >=2.7.0
 
